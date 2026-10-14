@@ -95,23 +95,26 @@ footer { padding:34px 0 60px; color:var(--faint); font-size:14px; border-top:1px
     <details><summary>Checking your download</summary><p>Each release lists a SHA256 checksum file on the <a id="rel-link" href="https://github.com/yadavyash-dravid/sapphire-releases/releases/latest">releases page</a>. Compare it with your download if you like.</p></details>
   </section>
 
-  <section id="coffee" class="coffee" hidden>
+  <section id="coffee" class="coffee">
     <h2>Sapphire is free</h2>
-    <p>I made Sapphire. If it helps your writing, you can buy me a coffee. It helps me keep improving it, and it is always optional.</p>
-    <a class="btn primary" id="coffee-link" href="#">Buy me a coffee</a>
+    <p>I made Sapphire. If it helps your writing, you can support it with any amount you like. It helps me keep improving it, and it is always optional.</p>
+    <p class="upi">UPI: <code id="upi-id">9996893881@sbi</code> <button type="button" class="btn" id="upi-copy" style="padding:6px 14px;font-size:14px">Copy</button></p>
+    <a class="btn primary" id="coffee-link" href="#" hidden>Support Sapphire</a>
+    <p style="font-size:14px;margin-top:18px">Inside Sapphire you can also scan a QR code from Settings or the Support button.</p>
   </section>
 
   <footer>© 2026 Yash Yadav. All rights reserved. Sapphire is free to use for your own writing. <span id="ver"></span></footer>
 </div>
 <script>
 (function () {
-  // Put your Buy Me a Coffee / Ko-fi address here. Leave it empty and the support section stays hidden.
+  // Optional: a payment page for people outside India (Ko-fi, PayPal.me, Buy Me a Coffee). Empty hides the button.
   var COFFEE_URL = '';
   var REPO = 'yadavyash-dravid/sapphire-releases';
   var mac = /Mac/i.test(navigator.platform) || /Macintosh/.test(navigator.userAgent), win = /Win/i.test(navigator.platform);
   var m = document.getElementById('dl-mac'), w = document.getElementById('dl-win');
   if (win && !mac) { w.classList.add('primary'); m.classList.remove('primary'); w.parentNode.insertBefore(w, m); }
-  if (COFFEE_URL) { var s = document.getElementById('coffee'); s.hidden = false; document.getElementById('coffee-link').href = COFFEE_URL; }
+  if (COFFEE_URL) { var l = document.getElementById('coffee-link'); l.hidden = false; l.href = COFFEE_URL; }
+  document.getElementById('upi-copy').onclick = function () { var b = this; (navigator.clipboard ? navigator.clipboard.writeText(document.getElementById('upi-id').textContent) : Promise.reject()).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1800); }, function () { b.textContent = 'Select and copy'; }); };
   fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(function (r) { if (!r.ok) throw 0; return r.json(); })
     .then(function (rel) {
