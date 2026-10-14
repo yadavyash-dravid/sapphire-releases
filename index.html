@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sapphire — a free writing studio for books and poems</title>
+<meta name="description" content="Sapphire is a free writing studio for Mac and Windows. Books, poems, a freeform canvas and research in one quiet place. Your work stays on your computer.">
+<link rel="icon" href="sapphire-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#0b1020; --bg2:#10172c; --card:#141c36; --line:#26325a; --text:#e6ebfa; --dim:#aab5d6; --faint:#7d8ab0; --blue:#5b8def; --blue-ink:#071026; --paper:#f4ecd8; --ink:#2b2418; --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; }
+@media (prefers-color-scheme: light) { :root { --bg:#f6f2e7; --bg2:#efe9d8; --card:#fffdf6; --line:#d9cfb4; --text:#2b2418; --dim:#5d523c; --faint:#857a60; --blue:#2c5fd1; --blue-ink:#fff; } }
+* { box-sizing: border-box; } html { scroll-behavior: smooth; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 var(--sans); -webkit-font-smoothing:antialiased; }
+a { color: inherit; } :focus-visible { outline:2px solid var(--blue); outline-offset:3px; border-radius:6px; }
+.wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+header { display:flex; align-items:center; gap:12px; padding:22px 0; }
+header .mark { height:34px; width:auto; } header .word { font:600 26px/1 var(--serif); letter-spacing:.01em; }
+header nav { margin-left:auto; display:flex; gap:22px; font-size:15px; color:var(--dim); } header nav a { text-decoration:none; } header nav a:hover { color:var(--text); }
+.hero { display:grid; grid-template-columns:1.05fr 1fr; gap:48px; align-items:center; padding:48px 0 72px; }
+h1 { font:600 clamp(40px,6vw,66px)/1.04 var(--serif); letter-spacing:-.01em; margin:0 0 18px; }
+.lede { color:var(--dim); font-size:19px; max-width:34em; margin:0 0 28px; }
+.dl { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
+.btn { display:inline-flex; align-items:center; gap:10px; padding:13px 22px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--text); font:600 16px var(--sans); text-decoration:none; transition:transform .12s, border-color .12s; }
+.btn:hover { transform:translateY(-1px); border-color:var(--blue); }
+.btn.primary { background:var(--blue); border-color:var(--blue); color:var(--blue-ink); }
+.btn small { display:block; font:400 12px var(--sans); opacity:.8; }
+.meta { color:var(--faint); font-size:14px; min-height:22px; }
+.shot { border-radius:16px; border:1px solid var(--line); box-shadow:0 30px 80px rgba(0,0,0,.35); overflow:hidden; background:var(--card); }
+.shot img { display:block; width:100%; height:auto; }
+section { padding:56px 0; border-top:1px solid var(--line); }
+h2 { font:600 clamp(30px,4vw,42px)/1.1 var(--serif); margin:0 0 14px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:26px; }
+.card { padding:20px 22px; border:1px solid var(--line); border-radius:14px; background:var(--card); }
+.card h3 { margin:0 0 6px; font:600 17px var(--sans); } .card p { margin:0; color:var(--dim); font-size:15px; }
+.split { display:grid; grid-template-columns:1fr 1.1fr; gap:40px; align-items:center; }
+details { border:1px solid var(--line); border-radius:12px; background:var(--card); margin:12px 0; padding:4px 18px; } summary { cursor:pointer; padding:12px 0; font-weight:600; } details p, details ol { color:var(--dim); font-size:15.5px; margin:0 0 14px; } details li { margin:6px 0; }
+.coffee { text-align:center; } .coffee p { color:var(--dim); max-width:32em; margin:0 auto 20px; }
+footer { padding:34px 0 60px; color:var(--faint); font-size:14px; border-top:1px solid var(--line); }
+@media (max-width:820px) { .hero, .split { grid-template-columns:1fr; } header nav { display:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img class="mark" src="sapphire-mark.png" alt=""><span class="word">Sapphire</span><nav><a href="#features">What it does</a><a href="#install">Install help</a><a href="#coffee">Support</a></nav></header>
+
+  <div class="hero">
+    <div>
+      <h1>A quiet place to write books and poems.</h1>
+      <p class="lede">Sapphire is a free writing studio for Mac and Windows. Your manuscript, your poems, a freeform canvas and your research live in one folder on your own computer. No account. Nothing uploaded.</p>
+      <div class="dl">
+        <a class="btn primary" id="dl-mac" href="https://github.com/yadavyash-dravid/sapphire-releases/releases/latest/download/Sapphire-mac.dmg"><span>Download for Mac<small>Apple Silicon and Intel</small></span></a>
+        <a class="btn" id="dl-win" href="https://github.com/yadavyash-dravid/sapphire-releases/releases/latest/download/Sapphire-Setup.exe"><span>Download for Windows<small>Windows 10 and 11</small></span></a>
+      </div>
+      <div class="meta" id="meta">Free. No account needed.</div>
+    </div>
+    <div class="shot"><img src="shelf.jpg" alt="The Sapphire bookshelf with a row of book covers" width="1600" height="1034"></div>
+  </div>
+
+  <section id="features">
+    <h2>Everything a writer needs, nothing in the way</h2>
+    <div class="grid">
+      <div class="card"><h3>A shelf for your books</h3><p>Every book gets a cover, chapters, notes and an outline. Arrange them on shelves like the real thing.</p></div>
+      <div class="card"><h3>Canvas</h3><p>Drop notes anywhere, connect them, group them, and send a scene to a chapter. For plots, characters and mess.</p></div>
+      <div class="card"><h3>Poems studio</h3><p>Sonnet, haiku, villanelle and more, with form guides, collections and a signature at the foot of the page.</p></div>
+      <div class="card"><h3>Insights and streaks</h3><p>Words per day, goals and a gentle streak. Choose which charts you see.</p></div>
+      <div class="card"><h3>Research and submissions</h3><p>Keep links, quotes and images beside your draft. Prepare query letters and synopses.</p></div>
+      <div class="card"><h3>Your look, your keys</h3><p>Light and dark themes, fonts, typewriter mode and ambient sound. Every shortcut can be changed.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="split">
+      <div>
+        <h2>Your words stay with you</h2>
+        <p style="color:var(--dim)">A vault is a folder you choose. Books, poems and exports are saved there as plain files, with a daily backup. Move it, sync it or back it up like any folder. Sapphire never sends your writing anywhere, and a passcode lock is built in if you share your computer.</p>
+        <p style="color:var(--dim)">When a new version comes out, Sapphire tells you and takes a safety copy of your vault before it updates.</p>
+      </div>
+      <div class="shot"><img src="canvas.jpg" alt="The Sapphire canvas with connected notes" width="1600" height="1034" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>Installing</h2>
+    <p style="color:var(--dim)">Sapphire is new and independent, so your computer will ask you to confirm it the first time. This is normal and takes a few seconds.</p>
+    <details open><summary>On a Mac</summary><ol>
+      <li>Open the downloaded <b>Sapphire-mac.dmg</b> and drag Sapphire into Applications.</li>
+      <li>Open Sapphire from Applications. If your Mac says it cannot verify the app, click <b>Done</b>, then open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+      <li>On older macOS you can instead right-click Sapphire, choose <b>Open</b>, then <b>Open</b> again.</li></ol></details>
+    <details><summary>On Windows</summary><ol>
+      <li>Run <b>Sapphire-Setup.exe</b>.</li>
+      <li>If Windows shows "Windows protected your PC", click <b>More info</b>, then <b>Run anyway</b>.</li>
+      <li>Follow the installer. Sapphire installs for your user only and does not need an administrator.</li></ol></details>
+    <details><summary>Checking your download</summary><p>Each release lists a SHA256 checksum file on the <a id="rel-link" href="https://github.com/yadavyash-dravid/sapphire-releases/releases/latest">releases page</a>. Compare it with your download if you like.</p></details>
+  </section>
+
+  <section id="coffee" class="coffee" hidden>
+    <h2>Sapphire is free</h2>
+    <p>I made Sapphire. If it helps your writing, you can buy me a coffee. It helps me keep improving it, and it is always optional.</p>
+    <a class="btn primary" id="coffee-link" href="#">Buy me a coffee</a>
+  </section>
+
+  <footer>© 2026 Yash Yadav. All rights reserved. Sapphire is free to use for your own writing. <span id="ver"></span></footer>
+</div>
+<script>
+(function () {
+  // Put your Buy Me a Coffee / Ko-fi address here. Leave it empty and the support section stays hidden.
+  var COFFEE_URL = '';
+  var REPO = 'yadavyash-dravid/sapphire-releases';
+  var mac = /Mac/i.test(navigator.platform) || /Macintosh/.test(navigator.userAgent), win = /Win/i.test(navigator.platform);
+  var m = document.getElementById('dl-mac'), w = document.getElementById('dl-win');
+  if (win && !mac) { w.classList.add('primary'); m.classList.remove('primary'); w.parentNode.insertBefore(w, m); }
+  if (COFFEE_URL) { var s = document.getElementById('coffee'); s.hidden = false; document.getElementById('coffee-link').href = COFFEE_URL; }
+  fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function (rel) {
+      var v = (rel.tag_name || '').replace(/^v/, ''), d = rel.published_at ? new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+      var size = function (n) { var a = (rel.assets || []).find(function (x) { return x.name === n; }); return a ? ' · ' + Math.round(a.size / 1048576) + ' MB' : ''; };
+      document.getElementById('meta').textContent = 'Version ' + v + (d ? ', released ' + d : '') + '. Free. No account needed.';
+      document.getElementById('ver').textContent = 'Version ' + v + '.';
+      m.querySelector('small').textContent += size('Sapphire-mac.dmg'); w.querySelector('small').textContent += size('Sapphire-Setup.exe');
+    })
+    .catch(function () { document.getElementById('meta').textContent = 'The first release is on its way. Check back soon.'; });
+})();
+</script>
+</body>
+</html>
